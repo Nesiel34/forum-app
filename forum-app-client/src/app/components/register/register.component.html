@@ -1,0 +1,33 @@
+<div>
+  <h2 class="text-center">רישום לאתר</h2>
+<form class="flex flex-col mb-4" [formGroup]="formRegister" (ngSubmit)="register()">
+  <mat-form-field>
+    <mat-label>שם משתמש</mat-label>
+    <input matInput formControlName="user">
+
+@if(username?.hasError("required") ){
+    <mat-error>שדה שם משתמש הינו חובה</mat-error>
+  }
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>סיסמה</mat-label>
+    <input matInput type="password" formControlName="password">
+    @if(password?.hasError("required") ){
+      <mat-error>שדה סיסמה הינו חובה</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>אימות סיסמה</mat-label>
+    <input matInput type="password" formControlName="confirmPassword">
+    @if(confirmPassword?.hasError("required") ){
+      <mat-error>שדה אימות סיסמה הינו חובה</mat-error>
+    }
+    @else if(confirmPassword?.hasError("confirmedValidator")){
+      <mat-error>שדה אימות סיסמה אינו תואם לשדה סיסמה</mat-error>
+    }
+  </mat-form-field>
+
+  <button mat-flat-button color="primary">רישום</button>
+
+</form>
+</div>

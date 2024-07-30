@@ -1,0 +1,16 @@
+<mat-dialog-content class="flex flex-col">
+  <p>הוספת פוסט</p>
+  <form [formGroup]="formPost" class="flex flex-col">
+
+  <mat-form-field>
+    <mat-label>כותרת</mat-label>
+    <input matInput formControlName="title" />
+  </mat-form-field>
+  <quill-editor formControlName="content"  [modules]="quillConfig" (onEditorCreated)="activateRTL($event)"></quill-editor>
+</form>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-flat-button mat-dialog-close color="accent">ביטול</button>
+  <button mat-flat-button color="primary"(click)="savePost()" cdkFocusInitial [disabled]="formPost.invalid">אישור</button>
+</mat-dialog-actions>

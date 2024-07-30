@@ -1,0 +1,5 @@
+<button mat-flat-button color="primary" class="mb-3" (click)="openPostDialog()">הוספת פוסט</button>
+@for(post of postService.post();track post.id){
+   <app-post [post]="post"></app-post>
+}
+

@@ -1,0 +1,24 @@
+<div class="post-container">
+  <div class="post-header">
+    <span class="post-user">
+      <mat-icon>person</mat-icon>
+      {{ post.username }}
+    </span>
+    <span class="post-time">{{ post.timestamp| date:'dd/MM/yyyy HH:mm' }}</span>
+  </div>
+  <div class="post-title">
+    <h3>{{ post.title }}</h3>
+  </div>
+  <div class="post-content" [innerHTML]="post.content"></div>
+
+  <div class="comments-section">
+    @for(comment of post.comments;track comment.id){
+      <app-comment [comment]="comment"></app-comment>
+    }
+  </div>
+  <quill-editor [formControl]="commentHtml"  [modules]="quillConfig" (onEditorCreated)="activateRTL($event)"></quill-editor>
+
+  <div class="add-comment">
+    <button mat-flat-button color="primary" (click)="addComment()" [disabled]="commentHtml.invalid">תגובה</button>
+  </div>
+</div>

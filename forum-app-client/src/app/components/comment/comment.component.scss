@@ -1,0 +1,28 @@
+.comment-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+
+  .comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+
+    .comment-user {
+      font-weight: bold;
+    }
+
+    .comment-time {
+      font-size: 0.8em;
+      color: #777;
+    }
+  }
+
+  .comment-content {
+    margin-top: 5px;
+  }
+}

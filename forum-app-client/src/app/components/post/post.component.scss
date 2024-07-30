@@ -1,0 +1,44 @@
+.post-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e1e1e1;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
+
+  .post-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    .post-user {
+      font-weight: bold;
+    }
+
+    .post-time {
+      font-size: 0.8em;
+      color: #777;
+    }
+  }
+
+  .post-title {
+    margin: 10px 0;
+  }
+
+  .post-content {
+    margin-bottom: 20px;
+  }
+
+  .comments-section {
+    margin-top: 15px;
+    max-height: 100px;
+    overflow: auto;
+  }
+
+  .add-comment {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,23 @@
+<div>
+  <h2 class="text-center">התחברות לאתר</h2>
+<form class="flex flex-col mb-4" [formGroup]="formLogin" (ngSubmit)="login()">
+  <mat-form-field>
+    <mat-label>שם משתמש</mat-label>
+    <input matInput formControlName="user">
+    @if(username?.hasError("required") ){
+      <mat-error>שדה שם משתמש הינו חובה</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>סיסמה</mat-label>
+    <input matInput type="password" formControlName="password">
+    @if(password?.hasError("required") ){
+      <mat-error>שדה סיסמה הינו חובה</mat-error>
+    }
+  </mat-form-field>
+  <button mat-flat-button color="primary">התחברות</button>
+
+</form>
+<mat-divider></mat-divider>
+<button mat-flat-button color="accent" class="!block mx-auto mt-4" [routerLink]="['/register']">הרשמה</button>
+</div>
